@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Emergency Hotline</title>
+    <!-- Daisy UI & Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome Setup -->
+    <script src="https://kit.fontawesome.com/5fbeb7b023.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <!-- Navbar Section -->
+    <section>
+        <div class="navbar bg-base-100 shadow-sm">
+            <div class="navbar-start">
+                <a class="btn btn-ghost text-xl">Emergency Service</a>
+            </div>
+            
+            <div class="navbar-end">
+                <div class="badge badge-accent">
+                    <p>0</p>
+                    <img src="assets/heart.png" class="" alt="">
+                </div>
+                <div class="badge badge-accent">
+                    <p>100</p>
+                    <img src="assets/coin.png" class="" alt="">
+                </div>
+                <a class="btn">2 Copy</a>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section -->
+    <section>
+        <div class="hero h-    "
+            style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);">
+            <div class="hero-overlay"></div>
+            <div class="hero-content text-neutral-content text-center">
+                <div class="max-w-md">
+                    <div class="avatar">
+                        <div class="w-24 rounded-full">
+                            <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                        </div>
+                    </div>
+                    <h1 class="mb-5 text-5xl font-bold">Emergency Service Directory</h1>
+                    <p class="mb-5">
+                        Government Emergency Services at Your Fingertip – A Project by Government of the People’s
+                        Republic of Bangladesh
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- main content section -->
+    <section>
+        <!-- card container sections -->
+        <section>
+            <div class="card bg-base-100 w-96 shadow-sm">
+                <div class="card-body items-center text-center">
+                    <!-- icons section  -->
+                    <div>
+                        <div class="avatar">
+                            <div class="w-10 rounded-xl">
+                                <img src="assets/emergency.png" />
+                            </div>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+
+                    </div>
+                    <h2 class="card-title">National Emergency Number</h2>
+                    <h5 class="card-title">National Emergency</h5>
+                    <h2 class="card-title">999</h2>
+                    <div class="badge badge-ghost">All</div>
+                    <div class="card-actions">
+                        <button class="btn btn-primary">Copy</button>
+                        <button class="btn btn-primary">Call</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call History container Sections -->
+        <section>
+            <h1 class="border border-red-600">Call History</h1>
+        </section>
+    </section>
 </body>
+
 </html>
