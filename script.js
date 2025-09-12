@@ -1,3 +1,9 @@
+document.getElementById('clearCallHistory').addEventListener('click', clearCallHistory);
+
+function clearCallHistory() {
+    document.getElementById('selectedContainer').innerHTML = '';
+}
+
 function heartCount() {
     let count = 0;
     const heartButtons = document.getElementsByClassName('heartBtn');
