@@ -25,7 +25,7 @@ function showAlert(id) {
     })
 
 
-
+    callHistory(id);
 }
 
 
@@ -64,6 +64,27 @@ function getInfo(id) {
 
 }
 
+function callHistory(id) {
+
+    const callHistoryContainer = document.getElementById('selectedContainer');
+    const callBtn = document.getElementById(id);
+    callBtn.addEventListener('click', function () {
+        const info = getInfo(id);
+        const createElement = document.createElement('button');
+        createElement.classList.add('btn', 'flex', '!justify-between', '!p-7')
+        createElement.innerHTML = `
+    
+                        <div class="text-start">
+                            ${info.serviceName} <br>
+                            <p class="text-gray-500">${info.number}</p>
+                        </div>
+                        <div class="badge badge-sm">${new Date().toLocaleTimeString()}</div>
+                 
+    `
+        callHistoryContainer.appendChild(createElement);
+    })
+
+}
 
 coinUse('callNational');
 coinUse('callPolice');
