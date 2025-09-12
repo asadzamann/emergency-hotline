@@ -15,42 +15,55 @@ function heartCount() {
 }
 
 function showAlert(id) {
+
     const callBtn = document.getElementById(id);
     callBtn.addEventListener('click', function () {
-        const parentCard = this.closest('.parent-card');
+        const info = getInfo(id);
 
-        if (!parentCard) return;
-
-        const serviceName = parentCard.querySelector('.service-name').innerText;
-        const number = parentCard.querySelector('.number').innerText;
-        const showText = 'Service name: ' + serviceName + '\n' + 'Service number: ' + number;
+        const showText = 'Service name: ' + info.serviceName + '\n' + 'Service number: ' + info.number;
         alert(showText);
+    })
+
+
+
+}
+
+
+function coinUse(id) {
+    let count = 0;
+    let callCost = 20;
+    const callBtn = document.getElementById(id);
+    const coinValue = document.getElementsByClassName('coinValue');
+
+    callBtn.addEventListener('click', function () {
+        count++;
+        for (let value of coinValue) {
+            coinValueNumber = parseInt(value.innerText);
+            const newCoinValue = coinValueNumber - callCost;
+            if (newCoinValue < 20) {
+                alert('Insufficient Balance');
+                return;
+            }
+
+            value.innerText = newCoinValue;
+        }
     })
 
 }
 
 
-function coinUse(id){
-     let count = 0;
-     let callCost = 20;
+function getInfo(id) {
     const callBtn = document.getElementById(id);
-    const coinValue = document.getElementsByClassName('coinValue');
+    const parentCard = callBtn.closest('.parent-card');
 
-   callBtn.addEventListener('click', function () {
-            count++;
-            for (let value of coinValue) {
-                coinValueNumber = parseInt(value.innerText);
-                const newCoinValue = coinValueNumber - callCost;
-                if(newCoinValue < 20){
-                    alert('Insufficient Balance');
-                    return;
-                }
-                
-                value.innerText = newCoinValue;
-            }
-        })
+    if (!parentCard) return;
+
+    const serviceName = parentCard.querySelector('.service-name').innerText;
+    const number = parentCard.querySelector('.number').innerText;
+    return { serviceName, number }
 
 }
+
 
 coinUse('callNational');
 coinUse('callPolice');
